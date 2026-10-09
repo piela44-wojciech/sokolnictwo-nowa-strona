@@ -1,0 +1,45 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+const { title = 'Sokolnictwo i Jastrzębiarstwo', description = 'Sztuka łowów z ptakami drapieżnymi — tradycja, wiedza i praktyka.' } = Astro.props;
+---
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#263a2c" />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+<style is:global>
+  :root {
+    color-scheme: light;
+    --ink: #283529;
+    --forest: #293b2f;
+    --forest-deep: #1c2a21;
+    --moss: #6b7454;
+    --paper: #f1e8d2;
+    --paper-light: #f8f2e4;
+    --rule: #a69b7b;
+    --muted: #686754;
+    font-family: "Libre Baskerville", Georgia, serif;
+    background: #d8d0bc;
+    color: var(--ink);
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; min-width: 320px; background: #d8d0bc; }
+  a { color: inherit; }
+  ::selection { background: #c9c29b; color: #1c2a21; }
+</style>
