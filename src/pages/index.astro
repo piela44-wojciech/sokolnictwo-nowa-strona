@@ -1,0 +1,192 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const nav = [
+  { label: 'Strona główna', href: '#top' },
+  { label: 'Sokolnictwo', href: '#sokolnictwo' },
+  { label: 'Jastrzębiarstwo', href: '#jastrzebiarstwo' },
+  { label: 'Ptaki łowcze', href: '#ptaki' },
+  { label: 'Układanie ptaków', href: '#ukladanie' },
+  { label: 'Galeria', href: '#galeria' },
+  { label: 'Literatura', href: '#literatura' },
+];
+---
+<BaseLayout>
+  <main class="page" id="top">
+    <header class="masthead">
+      <div class="masthead-art" aria-hidden="true">
+        <div class="sun"></div>
+        <div class="ridge ridge-back"></div>
+        <div class="ridge ridge-front"></div>
+        <svg class="branch" viewBox="0 0 320 150" role="presentation">
+          <path d="M8 137 C78 119 121 89 179 61 S260 22 309 10 M95 103 Q82 77 57 74 M137 82 Q137 52 119 39 M187 58 Q213 62 230 45 M226 39 Q244 44 251 60" />
+          <path d="M64 74 Q72 53 94 54 Q86 73 64 74 M117 40 Q130 22 149 27 Q137 43 117 40 M226 45 Q228 23 249 17 Q247 37 226 45" />
+        </svg>
+        <div class="falcon-silhouette">
+          <svg viewBox="0 0 300 250" role="img" aria-label="Dekoracyjna sylwetka sokoła na rękawicy">
+            <path d="M58 177 C47 163 44 145 56 130 C66 117 82 115 93 122 L111 133 L134 117 L148 94 L154 57 L172 34 L181 62 L196 77 L220 83 L204 99 L182 104 L172 123 L181 147 L203 161 L222 171 L210 185 L186 179 L163 165 L140 160 L117 171 L91 188 L76 200 L66 190 Z" />
+            <path d="M157 58 L177 14 L188 54 L179 73 Z" />
+            <path d="M153 95 L124 65 L130 112 L111 137 L143 129 Z" />
+            <path d="M91 188 L87 207 L96 209 L110 187 M111 173 L115 198 L125 195 L128 165" />
+            <path d="M44 213 Q102 194 160 205 L236 199 L249 212 Q199 235 124 233 L52 231 Z" />
+            <path d="M83 207 Q115 201 146 205 M173 207 L220 205" fill="none" stroke="#a99c79" stroke-width="2" />
+            <circle cx="177" cy="61" r="2.7" fill="#d9cba7" />
+          </svg>
+        </div>
+        <div class="art-caption">Ars venandi cum avibus</div>
+      </div>
+      <div class="title-block">
+        <p class="eyebrow">Tradycja • Wiedza • Sztuka łowów</p>
+        <h1>Sokolnictwo <span>i</span> Jastrzębiarstwo</h1>
+        <div class="title-rule"><span>❦</span></div>
+        <p class="subtitle">O sztuce polowania z ptakami drapieżnymi</p>
+      </div>
+    </header>
+
+    <div class="site-layout">
+      <aside class="sidebar" aria-label="Menu główne">
+        <div class="side-heading"><span>Spis treści</span></div>
+        <nav>
+          {nav.map((item, index) => (
+            <a class:list={['nav-item', { active: index === 0 }]} href={item.href}>
+              <span class="nav-number">{String(index + 1).padStart(2, '0')}</span>
+              <span>{item.label}</span>
+              <span class="nav-mark">❧</span>
+            </a>
+          ))}
+        </nav>
+        <div class="sidebar-note">
+          <span class="note-flourish">❦</span>
+          <p>„Ptak łowczy uczy cierpliwości, uważności i szacunku dla natury.”</p>
+          <span class="note-caption">— z tradycji sokolniczej</span>
+        </div>
+      </aside>
+
+      <article class="content">
+        <div class="section-kicker"><span>Witamy w świecie ptaków łowczych</span></div>
+        <h2>Stara sztuka, żywa tradycja</h2>
+        <p class="lead">Sokolnictwo to wyjątkowa więź człowieka z ptakiem drapieżnym — sztuka wymagająca wiedzy, cierpliwości i zrozumienia przyrody.</p>
+        <div class="ornament-divider"><span>✦ ❦ ✦</span></div>
+        <p>Ta strona jest poświęcona sokolnictwu i jastrzębiarstwu: historii łowów z ptakami, gatunkom wykorzystywanym w tej praktyce, ich biologii, układaniu oraz współczesnej opiece nad ptakami łowczymi.</p>
+        <div class="feature-grid">
+          <section class="feature" id="sokolnictwo">
+            <span class="feature-index">I</span>
+            <h3>Sokolnictwo</h3>
+            <p>Historia, tradycje i zasady polowania z sokołami — od dawnych traktatów po współczesną praktykę.</p>
+            <a href="#literatura">Czytaj więcej <span>↗</span></a>
+          </section>
+          <section class="feature" id="jastrzebiarstwo">
+            <span class="feature-index">II</span>
+            <h3>Jastrzębiarstwo</h3>
+            <p>Świat jastrzębi, ich naturalne zachowania oraz miejsce w tradycji łowów z ptakami.</p>
+            <a href="#ptaki">Czytaj więcej <span>↗</span></a>
+          </section>
+          <section class="feature" id="ptaki">
+            <span class="feature-index">III</span>
+            <h3>Ptaki łowcze</h3>
+            <p>Rozpoznawanie gatunków, biologia, potrzeby i odpowiedzialna opieka nad ptakami.</p>
+            <a href="#ukladanie">Czytaj więcej <span>↗</span></a>
+          </section>
+        </div>
+        <section class="lower-section" id="ukladanie">
+          <h3>Wiedza przekazywana z pokolenia na pokolenie</h3>
+          <p>Wiedza sokolnicza łączy obserwację przyrody, dawną literaturę i odpowiedzialną praktykę. Nowe działy będą rozwijane w kolejnych etapach projektu.</p>
+        </section>
+        <section class="lower-section" id="galeria">
+          <h3>Galeria</h3>
+          <p>Miejsce na fotografie ptaków łowczych, sprzętu sokolniczego i scen z terenu.</p>
+        </section>
+        <section class="lower-section" id="literatura">
+          <h3>Źródła i literatura</h3>
+          <p>W przyszłości znajdzie się tu uporządkowany wykaz książek, dawnych traktatów oraz materiałów uzupełniających.</p>
+        </section>
+        <footer class="footer">
+          <span>❦</span>
+          <p>Sokolnictwo i Jastrzębiarstwo</p>
+          <small>Nowa odsłona — projekt w przygotowaniu</small>
+        </footer>
+      </article>
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  .page { max-width: 1440px; margin: 0 auto; padding: 26px; }
+  .masthead { position: relative; display: grid; grid-template-columns: 42% 58%; min-height: 300px; overflow: hidden; background: var(--forest); color: var(--paper); border: 1px solid #4c5c47; outline: 1px solid #a89b78; outline-offset: -7px; }
+  .masthead-art { position: relative; min-height: 300px; overflow: hidden; background: linear-gradient(180deg, #475b49 0%, #334838 52%, #26372c 100%); }
+  .masthead-art::before { content: ""; position: absolute; inset: 0; opacity: .24; background-image: repeating-linear-gradient(7deg, transparent 0 8px, #cfc5a4 9px, transparent 10px 15px); mix-blend-mode: soft-light; }
+  .sun { position: absolute; width: 118px; height: 118px; border: 1px solid #b7af8b; border-radius: 50%; top: 36px; left: 40px; opacity: .75; box-shadow: 0 0 0 8px #b7af8b12, 0 0 0 17px #b7af8b0b; }
+  .ridge { position: absolute; bottom: 0; left: -10%; width: 125%; height: 48%; clip-path: polygon(0 77%, 17% 43%, 28% 64%, 44% 18%, 60% 59%, 78% 28%, 100% 68%, 100% 100%, 0 100%); }
+  .ridge-back { background: #5a6a50; opacity: .8; }
+  .ridge-front { height: 31%; background: #1f3025; clip-path: polygon(0 48%, 21% 12%, 37% 55%, 60% 27%, 77% 66%, 100% 20%, 100% 100%, 0 100%); }
+  .branch { position: absolute; z-index: 2; bottom: 4px; left: 0; width: 72%; stroke: #b9ae8a; stroke-width: 2; fill: none; opacity: .78; }
+  .falcon-silhouette { position: absolute; z-index: 3; width: 58%; max-width: 270px; right: 3%; bottom: -3px; filter: drop-shadow(2px 3px 0 #1a251d88); }
+  .falcon-silhouette svg { display: block; width: 100%; fill: #1a251e; stroke: #b1a581; stroke-width: 1.25; stroke-linejoin: round; }
+  .art-caption { position: absolute; z-index: 4; top: 15px; right: 16px; font: italic 12px "IM Fell English", Georgia, serif; color: #d7cba7; letter-spacing: .08em; writing-mode: vertical-rl; }
+  .title-block { align-self: center; padding: 40px 35px 37px; text-align: center; }
+  .eyebrow { margin: 0 0 17px; font-size: 10px; text-transform: uppercase; letter-spacing: .23em; color: #c6bd98; }
+  h1 { font: 48px/1.13 "IM Fell English", Georgia, serif; font-weight: 400; margin: 0; text-wrap: balance; }
+  h1 span { color: #b4aa83; font-style: italic; }
+  .title-rule { margin: 16px auto 10px; width: 70%; display: flex; align-items: center; gap: 10px; color: #b9ad85; }
+  .title-rule::before, .title-rule::after { content: ""; height: 1px; background: #8d916d; flex: 1; }
+  .title-rule span { font-size: 20px; }
+  .subtitle { margin: 0; color: #d1c7a8; font: italic 17px "IM Fell English", Georgia, serif; }
+  .site-layout { display: grid; grid-template-columns: 275px minmax(0, 1fr); margin-top: 18px; border: 1px solid var(--rule); background: var(--paper); box-shadow: 0 8px 25px #292c2112; }
+  .sidebar { padding: 24px 18px; background: #e4ddc7; border-right: 1px solid var(--rule); }
+  .side-heading { text-align: center; font: 20px "IM Fell English", Georgia, serif; margin: 0 0 18px; color: var(--forest); }
+  .side-heading::before, .side-heading::after { content: "—"; padding: 0 8px; color: var(--moss); }
+  nav { display: grid; gap: 8px; }
+  .nav-item { display: grid; grid-template-columns: 28px 1fr 18px; align-items: center; gap: 7px; min-height: 48px; padding: 9px 10px; text-decoration: none; border: 1px solid #aaa184; outline: 1px solid #c7bda1; outline-offset: -4px; background: #eee6d1; font: 13px/1.3 "IM Fell English", Georgia, serif; transition: background .15s ease; }
+  .nav-item:hover, .nav-item.active { background: #d0d0b5; }
+  .nav-number { color: #7c7b60; font: 10px "Libre Baskerville", Georgia, serif; }
+  .nav-mark { color: #6e795a; font-size: 18px; text-align: right; }
+  .sidebar-note { margin-top: 30px; border-top: 1px solid #b6ab8d; padding: 19px 8px 0; text-align: center; color: #5f614d; }
+  .note-flourish { font-size: 26px; color: #78805c; }
+  .sidebar-note p { font: italic 17px/1.55 "IM Fell English", Georgia, serif; }
+  .note-caption { font-size: 9px; letter-spacing: .05em; }
+  .content { min-width: 0; padding: 35px clamp(24px, 5vw, 64px) 28px; background-color: var(--paper-light); background-image: radial-gradient(#7c725514 .7px, transparent .7px); background-size: 5px 5px; }
+  .section-kicker { display: flex; align-items: center; gap: 13px; color: #727558; text-transform: uppercase; font-size: 9px; letter-spacing: .16em; }
+  .section-kicker::before, .section-kicker::after { content: ""; flex: 1; height: 1px; background: #c8bda0; }
+  h2 { margin: 21px 0 14px; text-align: center; color: #2e4031; font: 36px/1.2 "IM Fell English", Georgia, serif; font-weight: 400; }
+  .lead { max-width: 720px; margin: 0 auto; color: #565744; font: italic 19px/1.7 "IM Fell English", Georgia, serif; text-align: center; }
+  .ornament-divider { text-align: center; color: #78805c; padding: 20px 0 17px; letter-spacing: .4em; }
+  .content > p:not(.lead) { font-size: 13px; line-height: 1.9; color: #555747; }
+  .feature-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 28px; }
+  .feature { position: relative; padding: 20px 17px 18px; border: 1px solid #b6ab8d; background: #f1ead8; outline: 1px solid #d8ceb4; outline-offset: -5px; }
+  .feature-index { display: block; font: italic 17px "IM Fell English", Georgia, serif; color: #7b8060; }
+  h3 { margin: 10px 0 11px; color: #2e4031; font: 23px/1.2 "IM Fell English", Georgia, serif; font-weight: 400; }
+  .feature p, .lower-section p { color: #5a5b49; font-size: 11px; line-height: 1.85; }
+  .feature a { display: inline-flex; gap: 8px; align-items: center; margin-top: 10px; color: #43553c; font-size: 10px; text-decoration: none; border-bottom: 1px solid #a8a484; padding-bottom: 3px; }
+  .feature a:hover { color: #1b2c20; }
+  .lower-section { margin-top: 29px; border-top: 1px solid #d0c5a7; padding-top: 11px; }
+  .lower-section h3 { font-size: 24px; }
+  .footer { margin-top: 34px; padding-top: 22px; border-top: 1px solid #bdb194; text-align: center; color: #74785a; }
+  .footer > span { font-size: 22px; }
+  .footer p { margin: 9px 0 5px; color: #374633; font: 22px "IM Fell English", Georgia, serif; }
+  .footer small { font-size: 9px; letter-spacing: .12em; text-transform: uppercase; }
+  @media (max-width: 900px) {
+    .page { padding: 15px; }
+    .masthead { grid-template-columns: 38% 62%; }
+    .masthead-art { min-height: 270px; }
+    h1 { font-size: 38px; }
+    .title-block { padding: 30px 20px; }
+    .site-layout { grid-template-columns: 225px minmax(0,1fr); }
+    .feature-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 620px) {
+    .page { padding: 0; }
+    .masthead { display: flex; flex-direction: column; }
+    .masthead-art { min-height: 190px; order: 2; }
+    .title-block { padding: 30px 18px 25px; order: 1; }
+    h1 { font-size: clamp(35px, 9vw, 46px); }
+    .eyebrow { font-size: 8px; }
+    .subtitle { font-size: 16px; }
+    .site-layout { display: flex; flex-direction: column; margin-top: 0; }
+    .sidebar { border-right: 0; border-bottom: 1px solid var(--rule); padding: 18px 14px; }
+    nav { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .nav-item { min-height: 43px; font-size: 12px; }
+    .sidebar-note { display: none; }
+    .content { padding: 27px 20px; }
+    h2 { font-size: 31px; }
+    .lead { font-size: 17px; }
+  }
+</style>
