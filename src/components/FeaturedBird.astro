@@ -1,0 +1,5 @@
+---
+interface Props { src?: string; alt?: string; className?: string; }
+const { src = '/sokolnictwo-nowa-strona/images/birds/falcon-peregrine-main.svg', alt = 'Sokół wędrowny — rycina przyrodnicza', className = '' } = Astro.props;
+---
+<img class={className} src={src} alt={alt} loading="eager" decoding="async" />
