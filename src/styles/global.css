@@ -1,18 +1,1 @@
-:root {
-  --forest: #263b29;
-  --forest-deep: #182a1c;
-  --moss: #64764a;
-  --sage: #aab88a;
-  --parchment: #f0edc9;
-  --paper: #d8dfb3;
-  --ink: #1d2b1b;
-  --line: #8b9066;
-  --ornament: #c0bf8d;
-  --page-width: 1240px;
-}
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { margin: 0; background: var(--sage); color: var(--ink); font-family: Georgia, 'Times New Roman', serif; }
-a { color: inherit; }
-img { max-width: 100%; }
-:focus-visible { outline: 2px solid var(--moss); outline-offset: 3px; }
+:root{--forest:#263b29;--forest-deep:#182a1c;--moss:#64764a;--sage:#aab88a;--parchment:#f0edc9;--paper:#d8dfb3;--ink:#1d2b1b;--line:#8b9066;--ornament:#c0bf8d;--page-width:1240px}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--sage);color:var(--ink);font-family:Georgia,'Times New Roman',serif}a{color:inherit}img{max-width:100%}:focus-visible{outline:2px solid var(--moss);outline-offset:3px}

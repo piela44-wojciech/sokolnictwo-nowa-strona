@@ -1,3 +1,3 @@
-# Tła strony
+# Tła
 
-Pejzaże, faktury papieru i leśne tła przechowujemy oddzielnie od ptaków. Dzięki temu można je podmieniać niezależnie.
+Pejzaże i faktury papieru trzymamy osobno od ptaków, aby można je było wymieniać niezależnie.

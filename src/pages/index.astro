@@ -1,5 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import SideMenu from '../components/SideMenu.astro';
+import RightSidebar from '../components/RightSidebar.astro';
+import SiteFooter from '../components/SiteFooter.astro';
 const nav = [
   ['STRONA GŁÓWNA','#top'],['PTAKI ŁOWNE','#ptaki'],['DRAPIEŻNIKI','#drapieznik'],
   ['SOKOLNICTWO','#sokolnictwo'],['JASTRZĘBIARSTWO','#jastrzebiarstwo'],['PSY MYŚLIWSKIE','#psy'],
@@ -11,17 +14,13 @@ const nav = [
 <header class="hero">
   <div class="hero-art" aria-hidden="true">
     <div class="canopy"></div><div class="lake"></div><div class="castle">♜</div>
-    <svg class="hero-bird" viewBox="0 0 360 270"><path d="M32 164 Q62 137 94 122 L147 132 183 103 210 53 227 21 245 58 275 74 318 67 292 90 264 99 247 127 263 154 297 176 327 197 300 208 267 192 231 174 200 170 168 185 131 207 99 219 78 201 89 179Z"/><path d="M224 28 L246 7 242 57 232 70 M148 133 L123 91 131 148Z"/><path d="M96 218 L89 243 102 247 122 209 M164 187 L168 222 181 218 181 177"/></svg>
+    <img class="hero-bird" src="/sokolnictwo-nowa-strona/images/birds/falcon-peregrine-main.svg" alt="Sokół wędrowny — rycina przyrodnicza" />
     <div class="hero-label">Człowiek i ptak<br/>— wspólna droga od wieków...</div>
   </div>
   <div class="hero-title"><p class="eyebrow">TRADYCJA • WIEDZA • NATURA • PASJA</p><h1>Sokolnictwo<br/><span>Jastrzębiarstwo</span></h1><div class="rule">❦</div><p>O sztuce polowania z ptakami drapieżnymi</p></div>
 </header>
 <div class="columns">
-<aside class="sidebar">
-  <h2>MENU <span>➶</span></h2>
-  <nav>{nav.map((item,i)=><a class:list={['nav-item',{active:i===0}]} href={item[1]}><b>◇</b><span>{item[0]}</span><i>{['♧','♧','♧','➶','➶','♞','♜','❧','▧','⌁'][i]}</i></a>)}</nav>
-  <div class="sidebar-scene">❦<p>„Dawna tradycja<br/>w nowoczesnym wydaniu”</p></div>
-</aside>
+<SideMenu />
 <section class="main-content">
   <article class="panel intro" id="sokolnictwo">
     <h2>Sokolnictwo i Jastrzębiarstwo</h2><div class="ornament">— ❧ —</div>
@@ -42,13 +41,9 @@ const nav = [
   <article class="panel lower" id="galeria"><h3>Galeria</h3><p>Fotografie ptaków łowczych, sprzętu sokolniczego i scen terenowych.</p></article>
   <article class="panel lower" id="linki"><h3>Literatura i ciekawe linki</h3><p>Sprawdzone źródła, organizacje sokolnicze i publikacje będą dodawane etapami.</p></article>
 </section>
-<aside class="rightbar">
-  <article class="panel gallery"><h2>▧ GALERIA ZDJĘĆ</h2><div class="raptor-head"><svg viewBox="0 0 190 130"><path d="M39 9 Q89 -4 122 26 L143 51 130 72 158 100 130 122 87 126 61 103 39 77 35 44Z"/><path d="M39 12 Q17 36 34 70 L54 94 72 71 82 45 68 20Z" class="feather"/><ellipse cx="111" cy="57" rx="19" ry="15" class="eye-ring"/><circle cx="114" cy="57" r="7" class="eye"/><path d="M134 69 L177 88 143 99 122 83Z" class="beak"/></svg></div><p class="caption">Sokół wędrowny</p><div class="dots">● ○ ○ ○ ○</div><a href="#galeria">Zobacz galerię →</a></article>
-  <article class="panel link-panel"><h2>⌁ CIEKAWE LINKI</h2><a href="#linki">Polski Związek Łowiecki <span>→</span></a><a href="#linki">Organizacje sokolnicze <span>→</span></a><a href="#linki">Literatura i publikacje <span>→</span></a><a href="#linki">Prawo i przepisy <span>→</span></a><a href="#linki">Ciekawe strony <span>→</span></a></article>
-  <article class="panel quote"><h2>❝ CYTAT</h2><p>„Sokolnictwo to nie tylko łowy — to sztuka zrozumienia natury.”</p><span>❧</span></article>
-</aside>
+<RightSidebar />
 </div>
-<footer class="footer"><span>❧</span><b>Sokolnictwo i Jastrzębiarstwo</b><span>Tradycja • Wiedza • Natura • Pasja</span><small>© 2026 | Wszelkie prawa zastrzeżone</small></footer>
+<SiteFooter />
 </main>
 </BaseLayout>
 <style>
