@@ -1,4 +1,42 @@
 ---
-const items = [['STRONA GŁÓWNA','#top'],['PTAKI ŁOWNE','#ptaki'],['DRAPIEŻNIKI','#drapieznik'],['SOKOLNICTWO','#sokolnictwo'],['JASTRZĘBIARSTWO','#jastrzebiarstwo'],['PSY MYŚLIWSKIE','#psy'],['HISTORIA','#historia'],['RESTYTUCJA','#restytucja'],['GALERIA','#galeria'],['LINKI','#literatura']];
+const items = [
+  ['STRONA GŁÓWNA','#top','♧'],
+  ['PTAKI ŁOWNE','#ptaki','♧'],
+  ['DRAPIEŻNIKI','#drapieznik','♧'],
+  ['SOKOLNICTWO','#sokolnictwo','➶'],
+  ['JASTRZĘBIARSTWO','#jastrzebiarstwo','➶'],
+  ['PSY MYŚLIWSKIE','#psy','♞'],
+  ['HISTORIA','#historia','♜'],
+  ['RESTYTUCJA','#restytucja','❧'],
+  ['GALERIA','#galeria','▧'],
+  ['LINKI','#literatura','⌁']
+];
+const base = import.meta.env.BASE_URL;
 ---
-<aside class="sidebar"><h2>MENU <span>➶</span></h2><nav>{items.map((item,i)=><a class:list={['nav-item',{active:i===0}]} href={item[1]}><b>◇</b><span>{item[0]}</span><i>{['♧','♧','♧','➶','➶','♞','♜','❧','▧','⌁'][i]}</i></a>)}</nav><div class="sidebar-scene"><p>„Dawna tradycja<br/>w nowoczesnym wydaniu”</p></div></aside>
+<aside class="sidebar" aria-label="Menu główne">
+  <header class="menu-head"><span class="head-bird" aria-hidden="true">✦</span><h2>MENU</h2><span class="head-bird" aria-hidden="true">➶</span></header>
+  <nav>{items.map((item,i)=><a class:list={['nav-item',{active:i===0}]} href={item[1]}><b aria-hidden="true">◇</b><span>{item[0]}</span><i aria-hidden="true">{item[2]}</i></a>)}</nav>
+  <div class="sidebar-scene" role="img" aria-label="Sokolnik na koniu z ptakiem drapieżnym">
+    <img src={base + 'images/scenes/falconer-vintage.svg'} alt="" loading="lazy"/>
+    <p>„Dawna tradycja<br/>w nowoczesnym wydaniu”</p>
+  </div>
+</aside>
+<style>
+.sidebar{position:relative;align-self:stretch;min-width:0;padding:9px 9px 8px;color:#172916;background:linear-gradient(135deg,#dce5a5,#f5f1bd 28%,#dbe3a3 70%,#f2edb5);border:3px double #43552a;outline:1px solid #a4a75b;outline-offset:-7px;box-shadow:inset 0 0 0 5px #e8e7a9,inset 0 0 0 7px #46582a;font-family:Georgia,'Times New Roman',serif}
+.sidebar:before,.sidebar:after{content:"❧";position:absolute;z-index:2;color:#4b612d;font-size:27px;line-height:1;text-shadow:1px 1px #e3d88b;pointer-events:none}
+.sidebar:before{top:-4px;left:0}.sidebar:after{right:0;bottom:-5px;transform:rotate(180deg)}
+.menu-head{min-height:58px;display:flex;align-items:center;justify-content:space-evenly;gap:4px;margin:4px 3px 7px;padding:3px 4px;background:linear-gradient(#f4f0bf,#dbe4a2);border:3px double #4b5c2d;box-shadow:inset 0 0 0 2px #c5c77a;text-align:center}
+.menu-head h2{margin:0;font-size:clamp(22px,2vw,31px);line-height:1;font-weight:700;letter-spacing:.03em}
+.head-bird{font-size:23px;color:#293b21;text-shadow:1px 1px #b5b46b}
+.sidebar nav{display:grid;gap:4px}
+.nav-item{position:relative;display:grid;grid-template-columns:24px minmax(0,1fr) 42px;align-items:center;gap:5px;min-height:38px;padding:3px 6px;text-decoration:none;color:#182317;background:linear-gradient(90deg,#f7f3c7,#e5e9ac 68%,#cbd69a);border:2px solid #526238;box-shadow:inset 0 0 0 2px #e8df9c,0 1px 2px #24351e5c;font-size:clamp(10px,.93vw,14px);font-weight:bold;line-height:1.05}
+.nav-item:before{content:"";position:absolute;inset:3px;border:1px solid #8e9251;pointer-events:none}
+.nav-item b{font-size:22px;line-height:1;color:#a95b1d;text-shadow:1px 1px #f9e8a2;text-align:center}
+.nav-item span{position:relative;z-index:1}
+.nav-item i{font-style:normal;font-size:25px;line-height:1;text-align:center;color:#2f4629;text-shadow:1px 1px #d8d58d}
+.nav-item.active,.nav-item:hover,.nav-item:focus-visible{background:linear-gradient(90deg,#e6e9a5,#cdd99a);outline:2px solid #9c6c24;outline-offset:-4px}
+.sidebar-scene{position:relative;min-height:176px;margin:8px 2px 0;overflow:hidden;border-top:3px double #4b5c2d;background:linear-gradient(#c9d99b,#f2eeb6 60%,#b9cd8b);display:flex;align-items:flex-end;justify-content:center}
+.sidebar-scene img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:.92}
+.sidebar-scene p{position:relative;z-index:1;margin:0 2px 10px 34%;padding:4px 3px;color:#192719;text-align:center;font-size:clamp(10px,.9vw,13px);font-style:italic;font-weight:bold;line-height:1.4;text-shadow:0 1px #f2edc3;background:#e8edbd8c}
+@media(max-width:850px){.sidebar{padding:7px}.nav-item{grid-template-columns:19px minmax(0,1fr) 26px;min-height:34px;font-size:10px}.nav-item i{font-size:18px}.sidebar-scene{min-height:125px}.menu-head h2{font-size:21px}}
+</style>
