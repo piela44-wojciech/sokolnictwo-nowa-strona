@@ -45,14 +45,14 @@ const base = import.meta.env.BASE_URL;
 .hero-art{position:absolute;inset:0;min-height:0;background:#b9c88d;overflow:hidden}
 .hero-art .hero-landscape{display:block;width:100%;height:100%;min-height:0;object-fit:cover;object-position:center 48%}
 .hero-art:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 48%,#e6e9bfaa 72%,#e4e8bfeF 100%);pointer-events:none}
-.hero-title{z-index:1;position:relative;width:min(760px,70%);margin:0 0 8px;padding:10px 20px 7px;text-align:center;background:#e6e9bfbd;border:1px solid #7d8b4e;box-shadow:0 0 0 4px #d7dfab88;text-shadow:0 1px #f5f2d6}
+.hero-title{box-sizing:border-box;z-index:1;position:relative;width:min(760px,70%);margin:0 0 8px;padding:10px 20px 7px;text-align:center;background:#e6e9bfbd;border:1px solid #7d8b4e;box-shadow:0 0 0 4px #d7dfab88;text-shadow:0 1px #f5f2d6}
 .eyebrow{font-size:12px;letter-spacing:.15em;margin:0 0 4px;color:#334727;font-weight:bold}
 .hero-title h1{font-size:clamp(36px,4.1vw,62px);font-weight:700;line-height:.96;margin:0;color:#152516;text-shadow:1px 2px #a9b57a}
 .hero-title h1 span{font-size:.86em}
 .rule{display:flex;align-items:center;gap:12px;max-width:440px;margin:5px auto;color:#3e522a;font-size:17px}
 .rule:before,.rule:after{content:"";height:1px;background:#53683b;flex:1}
 .hero-title>p:last-child{font-size:13px;font-weight:bold;letter-spacing:.08em;margin:3px 0 0;color:#273a22}
-.columns{display:grid;grid-template-columns:minmax(245px,21%) minmax(0,1fr) minmax(260px,22%);gap:10px;margin-top:7px;align-items:stretch}
+.columns{display:grid;grid-template-columns:minmax(245px,21%) minmax(0,1fr) minmax(260px,22%);gap:7px;margin-top:0;align-items:stretch}
 .nav-item:focus-visible,.all-news:focus-visible,.gallery>a:focus-visible,.link-panel a:focus-visible{outline:3px solid #8a6732;outline-offset:2px}
 .nav-item:hover,.link-panel a:hover{background:#f3f0ca;color:#17281a}
 .all-news:hover,.gallery>a:hover{text-decoration:underline}
@@ -67,7 +67,7 @@ const base = import.meta.env.BASE_URL;
 .nav-item:hover,.nav-item.active{background:linear-gradient(#f8f4d3,#cbd89b)}
 .sidebar-scene{min-height:135px;background-image:url("/sokolnictwo-nowa-strona/images/scenes/falconer-vintage.svg");background-position:center;background-size:cover;display:flex;flex-direction:column;justify-content:flex-end;color:#e9e4bb;text-shadow:1px 1px 2px #172719;text-align:center;margin-top:10px;padding:16px 4px 8px;border-top:3px double #78864a}
 .sidebar-scene p{background:#e5e8b9e8;padding:5px 2px;text-shadow:none;margin:0;font-style:italic;font-size:13px;color:#303e28}
-.main-content{min-width:0;display:grid;gap:8px;align-content:start}
+.main-content{min-width:0;display:grid;gap:8px;align-content:start}\n/* Match the reference composition: intro and news remain in the center column. */\n.topics,.main-content>.lower{display:none}
 .panel{position:relative;background:#eef0c6;border:2px ridge #8b9855;outline:1px solid #c0c98a;outline-offset:-5px;box-shadow:inset 0 0 0 3px #dce3aa;padding:15px;color:#1d2b1b}
 .panel:before{content:"";position:absolute;inset:6px;border:1px solid #d0d7a0;pointer-events:none}.panel>*{position:relative}
 .intro h2{text-align:center;font-size:clamp(24px,2.7vw,39px);margin:0;font-weight:700;line-height:1.1}
